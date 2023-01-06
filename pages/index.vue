@@ -1,28 +1,29 @@
 <template>
 <main>
     <section>
-      <div class="tags bg-blue-300">
-        <button
+      <TagList>
+        <Tag
           v-for="t in tagsArray"
+          class="selected"
           @click="goMinusTag(t)"
-        >{{ t }} (x)</button>
-      </div>
-      <div class="tags">
-        <button
+          :close="true"
+        >{{ t }}</Tag>
+        <Tag
           v-for="(count, t) in tagCounts"
           @click="goPlusTag(t)"
-        >{{ t }} ({{ count }})</button>
-      </div>
+          :counter="count"
+        >{{ t }}</Tag>
+      </TagList>
     </section>
 
-    <section class="cards px-7 flex flex-col gap-3" v-if="filtered">
+    <section class="cards px-7 grid grid-cols-2 gap-3" v-if="filtered">
       <template v-if="filtered.length">
         <div class="card bg-gray-200 rounded-lg border px-7 py-5" v-for="item in filtered">
           <h1 class="font-bold">{{ item.name }}</h1>
           <p>{{ item.summary }}</p>
-          <div class="flex flex-row gap-2">
-            <div class="bg-light-400 rounded-md px-2 text-cool-gray-700" v-for="t in item.tags" :key="t">#{{ t }}</div>
-          </div>
+          <TagList>
+            <Tag v-for="t in item.tags" :key="t">#{{ t }}</Tag>
+          </TagList>
         </div>
       </template>
       <div v-else>No items for query: {{ route.query.tags }}</div>
