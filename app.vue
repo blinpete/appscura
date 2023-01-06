@@ -40,15 +40,18 @@ html, body, #__nuxt, .page {
 /* .card {
   @apply border-2 border-transparent;
 } */
+.card {
+  background-color: hsl(216deg 16% 90%);
+  color: #333;
+}
 
 .card:hover {
-  background-color: hsl(260deg 17% 93%);
+  /* background-color: hsl(260deg 17% 93%); */
   background-color: hsl(0deg 0% 98%);
-  
-  /* background-color: hsl(216deg 14% 95%); */
-  /* border: 2px solid hsl(216deg 14% 90%); */
+  background-color: hsl(216deg 14% 95%);
+
   /* @apply bg-light-600 border-light-900; */
-  
+  /* border: 2px solid hsl(216deg 14% 90%); */
 }
 
 html {
