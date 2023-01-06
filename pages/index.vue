@@ -1,14 +1,16 @@
 <template>
 <main>
-    <section>
-      <TagList>
+    <section class="section-tags bg-light-900 px-10 py-20 min-h-1/2 flex flex-col gap-3 justify-center">
+      <TagList class="flex justify-center">
         <Tag
           v-for="t in tagsArray"
           class="selected"
           @click="goMinusTag(t)"
           :close="true"
-        >{{ t }}</Tag>
-        <Tag
+          >{{ t }}</Tag>
+      </TagList>
+      <TagList class="flex justify-center">
+        <Tag v-if="!pending"
           v-for="(count, t) in tagCounts"
           @click="goPlusTag(t)"
           :counter="count"
@@ -16,15 +18,38 @@
       </TagList>
     </section>
 
-    <section class="cards px-7 grid grid-cols-2 gap-3" v-if="filtered">
+    <section class="cards px-15 py-7 grid grid-cols-2 gap-3 relative" v-if="filtered">
+      <div class="message rounded-2xl px-5 cursor-pointer bg-light-500 border-2 border-light-600 text-sm font-bold text-gray-600  absolute -top-3 right-1/2 transform translate-x-1/2">
+        <span class="when-not-hovered" :class="{switchable: tagsArray.length}">
+          <span v-if="pending">Searching apps...</span>
+          <span v-else>{{ filtered.length }} apps</span>
+        </span>
+        
+        <span class="when-hovered" :class="{switchable: tagsArray.length}" @click="goHome()">Clear filter</span>
+      </div>
+
       <template v-if="filtered.length">
-        <div class="card bg-gray-200 rounded-lg border px-7 py-5" v-for="item in filtered">
+        <a
+          class="card rounded-xl px-7 py-5 flex flex-col gap-2"
+          :href="item.website"
+          target="_blank"
+          rel="noopener noreferrer"
+          v-for="item in filtered"
+        >
+          <img
+            :src="`https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=${item.website}&size=256`"
+            alt="logo"
+            width="40"
+            height="40"
+            class="rounded-lg"
+          >
+
           <h1 class="font-bold">{{ item.name }}</h1>
           <p>{{ item.summary }}</p>
-          <TagList>
+          <TagList class="pointer-events-none gap-y-1">
             <Tag v-for="t in item.tags" :key="t">#{{ t }}</Tag>
           </TagList>
-        </div>
+        </a>
       </template>
       <div v-else>No items for query: {{ route.query.tags }}</div>
     </section>
@@ -40,7 +65,7 @@ const reactiveQuery = computed(() => route.query)
 const tagsArray = computed(() => [...queryToTags(route.query)])
 
 const { data, pending, error, refresh } = await useFetch('/api/count', {
-    query: reactiveQuery,
+  query: reactiveQuery,
 })
 
 const filtered = computed(() => data.value?.filtered)
@@ -68,19 +93,20 @@ function goMinusTag(t: string | null) {
     query: {tags: [...tags]}
   })
 }
+
+function goHome() {
+  navigateTo({path: '/'})
+}
 </script>
 
 <style scoped>
-
-.tags {
-  padding: 1em;
-  background-color: #adb;
-
-  display: flex;
-  gap: 0.2em;
+.message .when-hovered {
+  display: none;
 }
-
-.selected {
-  background-color: bisque;
+.message:hover .switchable.when-not-hovered {
+  display: none;
+}
+.message:hover .switchable.when-hovered {
+  display: inline;
 }
 </style>
