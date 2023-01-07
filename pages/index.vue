@@ -52,7 +52,19 @@
           </TagList>
         </a>
       </template>
-      <div v-else>No items for query: {{ route.query.tags }}</div>
+
+      <div v-else class="fallback text-center rounded-xl text-gray-600 col-span-2 py-1 px-30">
+        <h1 class="text-2xl mb-2">
+          Wow, looks like you've spotted a missing point!
+        </h1>
+        <p>
+          If you know an app matching your query, hit the button below.
+        </p>
+        <p>
+          This is a community-driven collection so we appreciate your contribution.
+        </p>
+        <ButtonContribute class="mt-10"/>
+      </div>
     </section>
 </main>
 </template>
