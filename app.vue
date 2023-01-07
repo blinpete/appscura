@@ -18,7 +18,15 @@ html, body, #__nuxt, .page {
 
 .selected {
   /* background-color: bisque; */
+  /* background-color: rgb(190, 223, 198); */
   background-color: hsl(0deg 100% 84%);
+}
+
+:not(.selected).disabled {
+  /* background-color: hsl(315deg 18% 67%); */
+  background-color: rgb(211, 216, 223);
+  pointer-events: none;
+  color: rgb(109, 115, 126);
 }
 
 .section-tags {
@@ -52,6 +60,9 @@ html, body, #__nuxt, .page {
 
   /* @apply bg-light-600 border-light-900; */
   /* border: 2px solid hsl(216deg 14% 90%); */
+  box-shadow: 0 2px 8px 6px hsl(216deg 10% 90%);
+
+  transition: background-color 0.3s ease-out;
 }
 
 html {

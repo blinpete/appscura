@@ -3,8 +3,8 @@
     <slot />
 
     <div v-if="counter || close" class="tag__dot absolute -top-2 -right-1.8 text-dark-300 rounded-full z-10 w-4 h-4 text-xs align-middle text-center">
-      <span v-if="counter !== undefined">{{ counter }}</span>
       <span v-if="close">&times;</span>
+      <span v-else-if="counter !== undefined">{{ counter }}</span>
     </div>
   </button>
 </template>

@@ -3,17 +3,11 @@
     <section class="section-tags bg-light-900 px-40 py-20 min-h-1/2 flex flex-col gap-3 justify-center">
       <TagList class="flex justify-center">
         <Tag
-          v-for="t in tagsArray"
-          class="selected"
-          @click="goMinusTag(t)"
-          :close="true"
-          >{{ t }}</Tag>
-      </TagList>
-      <TagList class="flex justify-center">
-        <Tag v-if="!pending"
-          v-for="(count, t) in tagCounts"
-          @click="goPlusTag(t)"
-          :counter="count"
+          v-for="t in tags"
+          :class="{selected: tagsArray.includes(t), disabled: !tagCounts?.[t]}"
+          @click="tagsArray.includes(t) ? goMinusTag(t) : goPlusTag(t)"
+          :counter="tagCounts?.[t]"
+          :close="tagsArray.includes(t)"
         >{{ t }}</Tag>
       </TagList>
     </section>
@@ -61,6 +55,7 @@
 
 
 <script lang="ts" setup>
+import { tags } from '~~/src/tags';
 import { queryToTags } from '~~/src/utils';
 
 const route = useRoute()
