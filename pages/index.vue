@@ -13,13 +13,17 @@
     </section>
 
     <section class="cards px-20 py-20 grid grid-cols-2 gap-3 relative" v-if="filtered">
-      <div class="message rounded-2xl px-5 cursor-pointer bg-light-500 border-2 border-light-600 text-sm font-bold text-gray-600  absolute -top-3 right-1/2 transform translate-x-1/2">
-        <span class="when-not-hovered" :class="{switchable: tagsArray.length}">
-          <span v-if="pending">Searching apps...</span>
-          <span v-else>{{ filtered.length }} apps</span>
-        </span>
-        
-        <span class="when-hovered" :class="{switchable: tagsArray.length}" @click="goHome()">Clear filter</span>
+      <div
+        class="message rounded-2xl px-5 cursor-pointer bg-light-500 border-2 border-light-600 text-sm font-bold text-gray-500  absolute -top-3 right-1/2 transform translate-x-1/2"
+        :class="{loading: pending}"
+      >
+        <Loader class="loader" />
+        <span>{{ filtered.length }} apps</span>
+        <span
+          v-if="tagsArray.length"
+          class="invisible absolute top-0 left-0 w-full"
+          @click="goHome()"
+        >Clear</span>
       </div>
 
       <template v-if="filtered.length">
@@ -97,14 +101,15 @@ function goHome() {
 }
 </script>
 
-<style scoped>
-.message .when-hovered {
-  display: none;
+<style>
+.loading .loader {
+  display: block;
 }
-.message:hover .switchable.when-not-hovered {
-  display: none;
-}
-.message:hover .switchable.when-hovered {
-  display: inline;
+.message:hover .invisible {
+  visibility: visible;
+  width: 100%;
+  background-color: inherit;
+  border-radius: inherit;
+  text-align: center;
 }
 </style>
