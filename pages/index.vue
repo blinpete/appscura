@@ -1,6 +1,14 @@
 <template>
-<main>
-    <section class="section-tags bg-light-900 px-40 py-20 min-h-1/2 flex flex-col gap-3 justify-center">
+<main ref="scrollerRef" class="overflow-y-auto">
+    <button
+      v-show="!taggerIsVisible"
+      class="bg-light-800 fixed right-6 bottom-8 rounded-full w-10 h-10 z-20 shadow shadow-cool-gray-400 hover:bottom-7.8"
+      @click="jumpUp()"
+    >
+      <Icon name="uil:arrow-up" size="25" class="text-gray-400"/>
+    </button>
+
+    <section ref="taggerRef" class="section-tags bg-light-900 px-40 py-20 min-h-1/2 flex flex-col gap-3 justify-center">
       <TagList class="flex justify-center">
         <Tag
           v-for="t in tags"
@@ -73,6 +81,7 @@
 <script lang="ts" setup>
 import { tags } from '~~/src/tags';
 import { queryToTags } from '~~/src/utils';
+import { useIntersectionObserver } from '@vueuse/core';
 
 const route = useRoute()
 const reactiveQuery = computed(() => route.query)
@@ -84,6 +93,26 @@ const { data, pending, error, refresh } = await useFetch('/api/count', {
 
 const filtered = computed(() => data.value?.filtered)
 const tagCounts = computed(() => data.value?.tagCounts)
+
+
+const scrollerRef = ref<HTMLElement | null>()
+const taggerRef = ref()
+const taggerIsVisible = ref(true)
+
+const {} = useIntersectionObserver(
+  taggerRef,
+  ([{isIntersecting}], observerEl) => {
+    taggerIsVisible.value = isIntersecting
+  })
+
+
+function jumpUp() {
+  console.log("🚀 | jumpUp | jumpUp", scrollerRef.value)
+
+  if (!scrollerRef.value) return
+
+  scrollerRef.value.scrollTo({top: 0, behavior: 'smooth'})
+}
 
 function goPlusTag(t: string) {
   const tags = queryToTags(route.query)
