@@ -8,7 +8,11 @@
       <Icon name="uil:arrow-up" size="25" class="text-gray-400"/>
     </button>
 
-    <section ref="taggerRef" class="section-tags bg-light-900 px-40 py-20 min-h-1/2 flex flex-col gap-3 justify-center">
+    <section ref="taggerRef" class="section-tags bg-light-900 px-40 py-20 min-h-1/2 flex flex-col gap-3 justify-center relative">
+      <NuxtLink to="/welcome" class="absolute top-4 left-4">
+        <img src="/favicon-2.png" alt="logo" width="30" height="30" class="rounded-md" style="box-shadow: 0 4px 10px 3px hsl(208deg 10% 68%);">
+      </NuxtLink>
+
       <TagList class="flex justify-center">
         <Tag
           v-for="t in tags"
@@ -35,30 +39,7 @@
       </div>
 
       <template v-if="filtered.length">
-        <a
-          class="card rounded-xl px-7 py-5 flex flex-col gap-2"
-          :href="item.website"
-          target="_blank"
-          rel="noopener noreferrer"
-          v-for="item in filtered"
-        >
-          <div class="flex flex-row items-center justify-start gap-4">
-            <img
-              :src="`https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=${item.website}&size=256`"
-              alt="logo"
-              width="40"
-              height="40"
-              class="rounded-lg"
-            >
-            
-            <h1 class="font-bold text-xl">{{ item.name }}</h1>
-          </div>
-          <p class="mb-2">{{ item.summary }}</p>
-          <h1 class="text-md italic text-center text-gray-500 mt-auto mb-2">"{{ item.motto }}"</h1>
-          <TagList class="pointer-events-none gap-y-1 justify-end">
-            <Tag class="bg-gray-100 opacity-70" v-for="t in item.tags" :key="t">#{{ t }}</Tag>
-          </TagList>
-        </a>
+        <Card v-for="item in filtered" :item="item" />
       </template>
 
       <div v-else class="fallback text-center rounded-xl text-gray-600 col-span-2 py-1 px-30">
@@ -71,7 +52,7 @@
         <p>
           This is a community-driven collection so we appreciate your contribution.
         </p>
-        <ButtonContribute class="mt-10"/>
+        <BaseButton class="mt-10" to="/contribute" label="Contribute"/>
       </div>
     </section>
 </main>
