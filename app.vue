@@ -1,10 +1,14 @@
 <template>
-  <Meta>
+  <Head>
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-  </Meta>
+    <Title>Appscura</Title>
+    <Meta name="description" content="Appscura. Community-driven curated collection of productivity apps.
+"/>
+    <Meta name="keywords" content="zettelkasten,kanban,todo,outliner,productivity,curated"/>
+    <Meta name="robots" content="index, follow" />
+    <Meta name="author" content="blinpete" />
+  </Head>
   <NuxtPage class="page min-h-full" />
-  <!-- <div class="bg-light-300 min-h-full">
-  </div> -->
 </template>
 
 <style>
