@@ -1,4 +1,7 @@
 <template>
+  <Meta>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  </Meta>
   <NuxtPage class="page min-h-full" />
   <!-- <div class="bg-light-300 min-h-full">
   </div> -->
@@ -8,6 +11,9 @@
 html, body, #__nuxt, .page {
   min-height: 100%;
   height: 100%;
+}
+html {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 /* ----------- colors --------- */
@@ -69,6 +75,16 @@ html {
   background-color: hsl(266deg 16% 82%);
   
   @apply bg-light-700;
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.4s;
+}
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  filter: blur(1rem);
 }
 
 </style>

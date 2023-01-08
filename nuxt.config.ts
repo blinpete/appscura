@@ -4,5 +4,11 @@ export default defineNuxtConfig({
     'nuxt-windicss',
     'nuxt-icon',
   ],
+  app: {
+    pageTransition: {
+      name: 'page',
+      mode: 'out-in',
+    }
+  }
   // windicss: {}
 })
