@@ -5,7 +5,7 @@
     
     <div class="m-auto text-center z-10">
       <div class="flex justify-center">
-        <img src="/favicon-2.png" alt="logo" width="60" height="60">
+        <img src="/logo.png" alt="logo" width="60" height="60">
       </div>
 
       <div class="text-6xl font-bold mb-4">

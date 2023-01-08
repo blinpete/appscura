@@ -10,7 +10,7 @@
 
     <section ref="taggerRef" class="section-tags bg-light-900 px-40 py-20 min-h-1/2 flex flex-col gap-3 justify-center relative">
       <NuxtLink to="/welcome" class="absolute top-4 left-4">
-        <img src="/favicon-2.png" alt="logo" width="30" height="30" class="rounded-md" style="box-shadow: 0 4px 10px 3px hsl(208deg 10% 68%);">
+        <img src="/logo.png" alt="logo" width="30" height="30" class="rounded-md" style="box-shadow: 0 4px 10px 3px hsl(208deg 10% 68%);">
       </NuxtLink>
 
       <TagList class="flex justify-center">
