@@ -8,7 +8,15 @@
       <Icon name="uil:arrow-up" size="25" class="text-gray-400"/>
     </button>
 
-    <section ref="taggerRef" class="section-tags bg-light-900 px-40 py-20 min-h-1/2 flex flex-col gap-3 justify-center relative">
+    <section ref="taggerRef"
+      class="
+        section-tags bg-light-900 relative
+        px-10 py-10 min-h-2/5 flex flex-col gap-3 justify-center 
+        md:(px-40 py-20)
+        xl:(px-80)
+        2xl:(px-140 min-h-1/3)
+      "
+    >
       <NuxtLink to="/welcome" class="absolute top-4 left-4">
         <img src="/logo.png" alt="logo" width="30" height="30" class="rounded-md" style="box-shadow: 0 4px 10px 3px hsl(208deg 10% 68%);">
       </NuxtLink>
@@ -24,7 +32,13 @@
       </TagList>
     </section>
 
-    <section class="cards px-20 py-20 grid grid-cols-2 gap-3 relative" v-if="filtered">
+    <section class="
+      cards
+      px-3 py-15 grid gap-3 grid-cols-1
+      md:(grid-cols-2 px-5)
+      lg:px-20
+      2xl:(grid-cols-3 px-35 gap-4)
+      relative" v-if="filtered">
       <div
         class="message rounded-2xl px-5 cursor-pointer bg-light-500 border-2 border-light-600 text-sm font-bold text-gray-500  absolute -top-3 right-1/2 transform translate-x-1/2"
         :class="{loading: pending}"

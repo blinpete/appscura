@@ -87,4 +87,9 @@ html {
   filter: blur(1rem);
 }
 
+@media only screen and (min-width: 1921px) {
+  body {
+    font-size: 1.2rem;
+  }
+}
 </style>

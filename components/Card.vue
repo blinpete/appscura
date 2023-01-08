@@ -1,6 +1,6 @@
 <template>
 <a
-  class="card rounded-xl px-7 py-5 flex flex-col gap-2"
+  class="card rounded-xl px-5 py-5 flex flex-col gap-1 md:(px-7 gap-2)"
   :href="item.website"
   target="_blank"
   rel="noopener noreferrer"
