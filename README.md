@@ -6,7 +6,7 @@ If you ever found yourself looking for an app to help you organize your tasks or
 
 Ok, enough talking, just try [Appscura](https://appscura.vercel.app/).
 
-Inspired by [carlpaul's post on Reddit about outliners](https://www.reddit.com/r/remNote/comments/j5s8c0/comparison_guide_of_infinite_outliner_apps/?utm_source=share&utm_medium=web2x&context=3).
+Inspired by [carlpaul153's post on Reddit](https://www.reddit.com/r/remNote/comments/j5s8c0/comparison_guide_of_infinite_outliner_apps/?utm_source=share&utm_medium=web2x&context=3) about outliners.
 
 
 ## Development
