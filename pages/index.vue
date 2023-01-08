@@ -69,6 +69,17 @@
         <BaseButton class="mt-10" to="/contribute" label="Contribute"/>
       </div>
     </section>
+
+    <footer class="bg-light-800 flex flex-col items-center justify-center py-8 font-medium relative">
+      <div class="links flex gap-2 text-gray-400">
+        <SocialLink href="https://github.com/blinpete/appscura" label="source"/>
+        <SocialLink
+          href="https://github.com/blinpete/appscura/issues/new?assignees=&labels=&template=feature_request.md&title=%5BFeature%5D"
+          label="contribute"
+          class="!bg-gray-300 !hover:bg-light-600"
+        />
+      </div>
+    </footer>
 </main>
 </template>
 
@@ -148,4 +159,5 @@ function goHome() {
   border-radius: inherit;
   text-align: center;
 }
+
 </style>
