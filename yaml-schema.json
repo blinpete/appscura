@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "JSON Schema for Appscurus item",
+  "description": "Application metadata to share via Appscurus.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "tags": {
+      "type": "array",
+      "description": "A list of relevant tags",
+      "items": {
+        "type": "string",
+        "oneOf": [
+          {
+            "const": "Zettelkasten",
+            "description": "suites for building Zettelkasten."
+          },
+          {
+            "const": "Markdown",
+            "description": "uses Markdown syntax."
+          },
+          {
+            "const": "Outliner",
+            "description": "An app implementing infinite nesting bullet lists."
+          }
+        ],
+        "title": "Rule"
+      }
+    },
+    "name": {
+      "type": "string",
+      "description": "Application name"
+    },
+    "logo": {
+      "type": "string",
+      "description": "Local path or url"
+    },
+    "summary": {
+      "type": "string",
+      "description": "app's main features, pros/cons, etc."
+    },
+    "website": {
+      "type": "string",
+      "description": "website url"
+    }
+  }
+}
