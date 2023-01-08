@@ -7,6 +7,10 @@
     <Meta name="keywords" content="zettelkasten,kanban,todo,outliner,productivity,curated"/>
     <Meta name="robots" content="index, follow" />
     <Meta name="author" content="blinpete" />
+
+    <Meta property="og:title" content="Community-driven curated collection of productivity apps." />
+    <Meta property="og:description" content="Find your favourite." />
+    <Meta property="og:image" content="https://appscura.vercel.app/preview.png" />
   </Head>
   <NuxtPage class="page min-h-full" />
 </template>
