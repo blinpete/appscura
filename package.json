@@ -13,6 +13,7 @@
     "nuxt-windicss": "^2.6.0"
   },
   "dependencies": {
+    "@nuxtjs/web-vitals": "^0.2.2",
     "@vueuse/core": "^9.10.0"
   }
 }
