@@ -1,42 +1,26 @@
-# Nuxt 3 Minimal Starter
+# Appscura
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+This is a community-driven curated collection of productivity apps.
 
-## Setup
+If you ever found yourself looking for an app to help you organize your tasks or thoughts and had to read blogs and guides about it in different places then you get the idea behind this project.
 
-Make sure to install the dependencies:
+Ok, enough talking, just try [Appscura](https://appscura.vercel.app/).
+
+Inspired by [carlpaul's post on Reddit about outliners](https://www.reddit.com/r/remNote/comments/j5s8c0/comparison_guide_of_infinite_outliner_apps/?utm_source=share&utm_medium=web2x&context=3).
+
+
+## Development
 
 ```bash
-# yarn
-yarn install
+# pnpm
+pnpm i --shamefully-hoist
+pnpm dev
 
 # npm
-npm install
-
-# pnpm
-pnpm install --shamefully-hoist
-```
-
-## Development Server
-
-Start the development server on http://localhost:3000
-
-```bash
+npm i
 npm run dev
 ```
 
-## Production
+The development server runs on http://localhost:3000
 
-Build the application for production:
 
-```bash
-npm run build
-```
-
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
