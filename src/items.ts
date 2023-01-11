@@ -311,7 +311,7 @@ export const items: Item[] = [
     website: 'https://www.thunknotes.com/',
     motto: 'The Modern Daily Thinking Tool',
     summary: 'Think faster. Create more.',
-    tags: ['outliner', 'data-cloud'],
+    tags: ['data-cloud', 'graph-view', 'note-taking', 'zettelkasten'],
   },
   // {
   //   name: '',
