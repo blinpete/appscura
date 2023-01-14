@@ -325,7 +325,7 @@ export const items: Item[] = [
     website: 'https://nextool.app/',
     motto: 'Nextool is a GTD-oriented task manager you can trust.',
     summary: 'Simplify your reviews by automatically identifying stalled tasks, and use nested projects to plan ahead with a single tool.',
-    tags: ['todo', 'data-local', 'open-source', 'free'],
+    tags: ['todo', 'data-local', 'open-source', 'free', 'under-dev'],
   },
 
   // {
