@@ -313,20 +313,20 @@ export const items: Item[] = [
     summary: 'Think faster. Create more.',
     tags: ['data-cloud', 'graph-view', 'note-taking', 'zettelkasten'],
   },
-  // {
-  //   name: '',
-  //   website: '',
-  //   motto: '',
-  //   summary: '',
-  //   tags: ['outliner', 'data-cloud'],
-  // },
-  // {
-  //   name: '',
-  //   website: '',
-  //   motto: '',
-  //   summary: '',
-  //   tags: ['outliner', 'data-cloud'],
-  // },
+  {
+    name: 'OtterJot',
+    website: 'https://www.otterjot.com/',
+    motto: 'Oh no! I added to the pile of notes apps',
+    summary: 'Wiki-like notes to help you organise your thoughts and ideas',
+    tags: ['note-taking', 'data-local', 'under-dev'],
+  },
+  {
+    name: 'Nextool',
+    website: 'https://nextool.app/',
+    motto: 'Nextool is a GTD-oriented task manager you can trust.',
+    summary: 'Simplify your reviews by automatically identifying stalled tasks, and use nested projects to plan ahead with a single tool.',
+    tags: ['todo', 'data-local', 'open-source', 'free'],
+  },
 
   // {
   //   name: '',

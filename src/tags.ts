@@ -26,6 +26,7 @@ export const tags = [
   'data-local',
   'data-cloud', // cloud, where it stores your data
 
+  'under-dev',
   'beta',
   'open-source',
   'free', // !== entirely free, mean that it has a free plan
