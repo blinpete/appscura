@@ -94,7 +94,7 @@ export const items: Item[] = [
     website: 'https://www.taskade.com/',
     motto: 'Build a Second Brain for Your Team.',
     summary: 'A magical list to break down complexities and map out your collective mind. Unlock your collaborative brain and connect tasks, notes, and teams, in one unified workspace.',
-    tags: ['outliner', 'data-cloud', 'mindmap', 'collab', 'kanban'],
+    tags: ['outliner', 'data-cloud', 'mindmap', 'collab', 'kanban', 'free'],
   },
   {
     name: 'Joplin',
@@ -275,7 +275,7 @@ export const items: Item[] = [
     name: 'Superlist',
     website: 'https://www.superlist.com/',
     motto: 'Get things done with your team',
-    summary: '',
+    summary: 'Like a to-do list but better',
     tags: ['todo', 'collab', 'data-cloud', 'beta', 'open-source'],
   },
   {
@@ -283,7 +283,7 @@ export const items: Item[] = [
     website: 'https://clickup.com/',
     motto: 'One app to replace them all.',
     summary: 'All your work in one place: Tasks, Whiteboards, Dashboards, Chat, Goals, Docs',
-    tags: ['todo', 'whitedoard', 'collab', 'data-cloud', 'free',],
+    tags: ['todo', 'whitedoard', 'kanban', 'mindmap', 'collab', 'data-cloud', 'free',],
   },
   {
     name: 'TiddlyWiki',
