@@ -59,26 +59,6 @@ html {
   background-color: var(--c-section-border);
 }
 
-/* .card {
-  @apply border-2 border-transparent;
-} */
-.card {
-  background-color: hsl(216deg 16% 90%);
-  color: #333;
-}
-
-.card:hover {
-  /* background-color: hsl(260deg 17% 93%); */
-  background-color: hsl(0deg 0% 98%);
-  background-color: hsl(216deg 14% 95%);
-
-  /* @apply bg-light-600 border-light-900; */
-  /* border: 2px solid hsl(216deg 14% 90%); */
-  box-shadow: 0 2px 8px 6px hsl(216deg 10% 90%);
-
-  transition: background-color 0.3s ease-out;
-}
-
 html {
   background-color: hsl(266deg 16% 82%);
   

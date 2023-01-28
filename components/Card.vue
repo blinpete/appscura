@@ -1,6 +1,13 @@
 <template>
 <a
-  class="card rounded-xl px-5 py-5 flex flex-col gap-1 md:(px-7 gap-2)"
+  class="
+    card rounded-xl px-5 py-5 flex flex-col gap-1
+    md:(px-7 gap-2)
+    cursor-pointer
+  text-cool-gray-600 bg-cool-gray-200
+    transform shadow-md transition duration-200 ease-out
+    hover:(-translate-y-0.5 shadow-xl)
+  "
   :href="item.website"
   target="_blank"
   rel="noopener noreferrer"
