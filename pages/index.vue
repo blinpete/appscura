@@ -34,7 +34,7 @@
 
     <section class="
       cards
-      px-3 py-15 grid gap-3 grid-cols-1
+      px-3 py-15 grid gap-4 grid-cols-1
       md:(grid-cols-2 px-5)
       lg:px-20
       2xl:(grid-cols-3 px-35 gap-4)
