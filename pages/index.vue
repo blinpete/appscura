@@ -87,7 +87,6 @@
 <script lang="ts" setup>
 import { tags } from '~~/src/tags';
 import { queryToTags } from '~~/src/utils';
-import { useIntersectionObserver } from '@vueuse/core';
 
 const route = useRoute()
 const reactiveQuery = computed(() => route.query)
@@ -100,25 +99,12 @@ const { data, pending, error, refresh } = await useFetch('/api/count', {
 const filtered = computed(() => data.value?.filtered)
 const tagCounts = computed(() => data.value?.tagCounts)
 
-
-const scrollerRef = ref<HTMLElement | null>()
-const taggerRef = ref()
-const taggerIsVisible = ref(true)
-
-const {} = useIntersectionObserver(
-  taggerRef,
-  ([{isIntersecting}], observerEl) => {
-    taggerIsVisible.value = isIntersecting
-  })
-
-
-function jumpUp() {
-  console.log("🚀 | jumpUp | jumpUp", scrollerRef.value)
-
-  if (!scrollerRef.value) return
-
-  scrollerRef.value.scrollTo({top: 0, behavior: 'smooth'})
-}
+const {
+  scrollerRef,
+  targetRef: taggerRef,
+  targetIsVisible: taggerIsVisible,
+  jumpUp
+} = useScrollTop()
 
 function goPlusTag(t: string) {
   const tags = queryToTags(route.query)
