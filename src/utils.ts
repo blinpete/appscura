@@ -7,5 +7,7 @@ export function queryToTags(q: LocationQuery) {
     tags = [tags]
   }
 
+  // should return `as Set<string>`? 
+
   return new Set(tags)
 }

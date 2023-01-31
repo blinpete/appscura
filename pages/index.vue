@@ -24,10 +24,10 @@
       <TagList class="flex justify-center">
         <Tag
           v-for="t in tags"
-          :class="{selected: tagsArray.includes(t), disabled: !tagCounts?.[t]}"
-          @click="tagsArray.includes(t) ? goMinusTag(t) : goPlusTag(t)"
-          :counter="tagCounts?.[t]"
-          :close="tagsArray.includes(t)"
+          :class="{selected: tagsFromQuery.has(t), disabled: !tagCounts[t]}"
+          @click="tagsFromQuery.has(t) ? goMinusTag(t) : goPlusTag(t)"
+          :counter="tagCounts[t] || undefined"
+          :close="tagsFromQuery.has(t)"
         >{{ t }}</Tag>
       </TagList>
     </section>
@@ -41,18 +41,18 @@
       relative" v-if="filtered">
       <div
         class="message rounded-2xl px-5 cursor-pointer bg-light-500 border-2 border-light-600 text-sm font-bold text-gray-500  absolute -top-3 right-1/2 transform translate-x-1/2"
-        :class="{loading: pending}"
+        :class="{loading: false}"
       >
         <Loader class="loader" />
-        <span>{{ filtered.length }} apps</span>
+        <span>{{ filtered.size }} apps</span>
         <span
-          v-if="tagsArray.length"
+          v-if="hasFound"
           class="invisible absolute top-0 left-0 w-full"
           @click="goHome()"
         >Clear</span>
       </div>
 
-      <template v-if="filtered.length">
+      <template v-if="filtered.size">
         <Card v-for="item in filtered" :item="item" />
       </template>
 
@@ -85,19 +85,18 @@
 
 
 <script lang="ts" setup>
+// import { items } from '~~/src/items';
+// import { tags } from '~~/src/tags';
 import { tags } from '~~/src/tags';
 import { queryToTags } from '~~/src/utils';
 
 const route = useRoute()
-const reactiveQuery = computed(() => route.query)
-const tagsArray = computed(() => [...queryToTags(route.query)])
+const tagsFromQuery = computed(() => queryToTags(route.query))
 
-const { data, pending, error, refresh } = await useFetch('/api/count', {
-  query: reactiveQuery,
-})
+const { filtered, tagCounts } = useFilter(tagsFromQuery)
 
-const filtered = computed(() => data.value?.filtered)
-const tagCounts = computed(() => data.value?.tagCounts)
+// const hasFound = computed(() => [...Object.values(tagCounts.value)].some(Boolean))
+const hasFound = computed(() => tagsFromQuery.value.size)
 
 const {
   scrollerRef,
@@ -130,6 +129,8 @@ function goMinusTag(t: string | null) {
 }
 
 function goHome() {
+  console.log("🚀 | goHome | goHome")
+
   navigateTo({path: '/'})
 }
 </script>
