@@ -24,9 +24,13 @@
       <TagList class="flex justify-center">
         <Tag
           v-for="t in tags"
-          :class="{selected: tagsFromQuery.has(t), disabled: !tagCounts[t]}"
+          :class="{
+            selected: tagsFromQuery.has(t),
+            disabled: !tagCounts.get(t),
+            autoSelected: tagCounts.get(t) === null,
+          }"
           @click="tagsFromQuery.has(t) ? goMinusTag(t) : goPlusTag(t)"
-          :counter="tagCounts[t] || undefined"
+          :counter="tagCounts.get(t) || undefined"
           :close="tagsFromQuery.has(t)"
         >{{ t }}</Tag>
       </TagList>
