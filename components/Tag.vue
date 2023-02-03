@@ -1,8 +1,5 @@
 <template>
-  <button class="
-    tag bg-light-400 text-cool-gray-600
-    rounded-md py-0.15 px-3 relative
-  ">
+  <button class="tag relative">
     <slot />
 
     <div v-if="counter || close" class="
@@ -42,7 +39,21 @@ defineProps<{
 .selected {
   transform: translateY(1px);
 }
-
+.autoSelected:not(.selected) {
+  transition-property: outline, transform;
+  transition-timing-function: ease-in-out;
+  
+  /* background-color: hsl(0deg 100% 84%);
+  opacity: 0.85; */
+  outline: 0.32em solid hsl(214deg 14% 77%);
+  
+  transition-delay: 0.08s;
+  transition-duration: 0.04s;
+  /* transition-duration: 0.1s, 0.18s; */
+  
+  /* transform: rotateZ(0.8deg) translateY(-1px); */
+  /* transform: translateY(-1px); */
+}
 .tag__dot {
   background-color: inherit;
 }

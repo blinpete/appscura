@@ -1,6 +1,6 @@
 <template>
-  <main class="bg-light-900 flex">
-    <div class="m-auto text-center z-10 flex flex-col justify-between items-center">
+  <main class="root flex">
+    <div class="m-auto text-center text-warm-gray-700 z-10 flex flex-col justify-between items-center">
       <div class="flex justify-center">
         <img src="/logo.png" alt="logo" width="60" height="60">
       </div>
@@ -15,3 +15,12 @@
     </div>
   </main>
 </template>
+
+<style scoped>
+.root {
+  /* background: linear-gradient(15deg,hsl(204deg 13% 71%),hsl(204deg 6% 89%)); */
+  /* background: linear-gradient(15deg,hsl(204deg 13% 71%),hsl(13, 12%, 86%)); */
+  /* background: linear-gradient(14deg,hsl(204deg 10% 70%),hsl(13deg 19% 84%)); */
+  background: linear-gradient(12deg,hsl(204deg 39% 88%),hsl(13deg 62% 93%));
+}
+</style>

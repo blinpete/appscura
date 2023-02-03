@@ -3,7 +3,7 @@
   <TagList class="flex justify-center">
     <Tag
       v-for="t in tags"
-      class="!bg-transparent opacity-40 cursor-default"
+      class="!bg-transparent !shadow-none !opacity-40 text-[#474e54] cursor-default hover:(transform scale-103)"
     >#{{ t }}</Tag>
   </TagList>
 </div>
