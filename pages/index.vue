@@ -24,6 +24,10 @@
       <TagList class="flex justify-center">
         <Tag
           v-for="t in tags"
+          class="
+            bg-light-400 text-cool-gray-600
+            rounded-md py-0.15 px-3
+          "
           :class="{
             selected: tagsFromQuery.has(t),
             disabled: !tagCounts.get(t),

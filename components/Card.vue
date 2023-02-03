@@ -25,8 +25,8 @@
   </div>
   <p class="mb-2">{{ item.summary }}</p>
   <h1 class="text-md italic text-center text-gray-500 mt-auto mb-2">"{{ item.motto }}"</h1>
-  <TagList class="pointer-events-none !gap-1.5 justify-end">
-    <Tag class="bg-light-700 opacity-70 !shadow-none" v-for="t in item.tags" :key="t">#{{ t }}</Tag>
+  <TagList class="pointer-events-none !gap-1.5 !gap-x-4 justify-end">
+    <Tag class="opacity-70 !shadow-none text-[#9aa0ac]" v-for="t in item.tags" :key="t">#{{ t }}</Tag>
   </TagList>
 </a>
 </template>

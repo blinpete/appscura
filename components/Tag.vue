@@ -1,8 +1,5 @@
 <template>
-  <button class="
-    tag bg-light-400 text-cool-gray-600
-    rounded-md py-0.15 px-3 relative
-  ">
+  <button class="tag relative">
     <slot />
 
     <div v-if="counter || close" class="
