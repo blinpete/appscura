@@ -1,5 +1,6 @@
 {
   "yaml.schemas": {
     "./.vscode/yaml-schema.json": "src/apps.yaml"
-  }
+  },
+  "editor.formatOnSave": false
 }
