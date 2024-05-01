@@ -3,7 +3,7 @@
     <slot />
 
     <div v-if="counter || close" class="
-      tag__dot text-dark-100  text-xs
+      tag__dot text-[0.65em]
       absolute z-5 -top-2.2 right-0.2 transform translate-x-1/2
       rounded-full px-1 min-w-4.2 min-h-4.2
       flex items-center justify-center
@@ -23,7 +23,7 @@ defineProps<{
 
 <style>
 .tag {
-  --color-shadow: rgb(163, 169, 175);
+  --color-shadow: hsl(210, 7%, 66%);
 }
 .tag:not(.disabled), .tag.selected {
   transition-property: transform, box-shadow, opacity;
@@ -45,7 +45,7 @@ defineProps<{
   
   /* background-color: hsl(0deg 100% 84%);
   opacity: 0.85; */
-  outline: 0.32em solid hsl(214deg 14% 77%);
+  outline: 0.32em solid hsl(215, 22%, 75%);
   
   transition-delay: 0.08s;
   transition-duration: 0.04s;
@@ -56,5 +56,19 @@ defineProps<{
 }
 .tag__dot {
   background-color: inherit;
+}
+
+.dark {
+  .tag {
+    --color-shadow: hsl(210, 1%, 0%);
+  }
+
+  .tag:hover:not(.selected){
+    opacity: 0.75;
+  }
+
+  .autoSelected:not(.selected) {
+    outline-color: hsl(0deg 1% 1%);
+  }
 }
 </style>

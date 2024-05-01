@@ -4,10 +4,12 @@
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
+    "analyze": "nuxt analyze",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@nuxtjs/color-mode": "^3.4.1",
     "nuxt": "3.0.0",
     "nuxt-icon": "^0.1.8",
     "nuxt-windicss": "^2.6.0"

@@ -1,6 +1,11 @@
 <template>
 <a
-  class="inline-block px-6 py-2 bg-transparent  rounded-lg cursor-pointer hover:bg-gray-300"
+  class="
+    inline-block px-6 py-2 bg-transparent  rounded-lg cursor-pointer
+    bg-warm-gray-200
+    dark:bg-warm-gray-800
+    hover:opacity-85
+  "
   target="_blank"
   rel="noopener noreferrer"
 >
